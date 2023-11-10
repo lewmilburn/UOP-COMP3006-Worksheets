@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Test Harness</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="javascript.js"></script>
+    </head>
+    <body>
+        <h1>Test Harness</h1>
+        <section>
+            <h1 class="smallHeading">Hello World</h1>
+            <p>Please enter your name:</p>
+            <input type="text" id="name">
+            <button id="sayHello">Say Hello!</button>
+            <p id="sayHello_result"></p>
+        </section>
+        <section>
+            <h1 class="smallHeading">Validation</h1>
+            <p>Please enter a number:</p>
+            <input type="text" id="number">
+            <button id="doValidation">Check Number</button>
+            <div class="message hidden" id="message">
+                <p id="numberMessageText"></p>
+            </div>
+        </section>
+        <section>
+            <h1 class="smallHeading">Unique Numbers</h1>
+            <p>Enter CSV Numbers:</p>
+            <input type="text" id="string">
+            <button id="findUnique">Check Number</button>
+            <p id="findUnique_result"></p>
+        </section>
+    </body>
+</html>
