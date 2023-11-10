@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+        <style>
+            .main {
+                width: 250px;
+                background-color: #d0d0d0;
+            }
+            .light {
+                height: 50px;
+                width: 50px;
+                background-color: #00ffff;
+            }
+            #burn {
+                width: 150px;
+                font-weight: 700;
+            }
+        </style>
+
+        <script>
+            $(window).on("load", function() {
+                mocha.run();
+            });
+            function clickBtn() {
+                let bgColor = document.getElementById('light').style.backgroundColor;
+                console.log(rgb2hex(bgColor));
+                if (rgb2hex(bgColor) == '#00ffff') {
+                    document.getElementById('light').style.backgroundColor = '#ffff00';
+                } else if (rgb2hex(bgColor) == '#ffff00') {
+                    document.getElementById('light').style.backgroundColor = '#ff00ff';
+                } else if (rgb2hex(bgColor) == '#ff00ff') {
+                    document.getElementById('light').style.backgroundColor = '#00ffff';
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="light" id="light"></div>
+            <button id="burn" onclick="clickBtn()">Burn!</button>
+        </div>
+        <!-- Do not edit this section. -->
+        <div id="mocha"></div>
+    
+        <script src="https://unpkg.com/chai/chai.js"></script>
+        <script src="https://unpkg.com/mocha/mocha.js"></script>
+    
+        <script class="mocha-init">
+            mocha.setup('tdd');
+            mocha.checkLeaks();
+        </script>
+        
+        <script src="Exercise4_Wk1_Tests.js"></script>
+                
+        <!-- Your HTML code goes here. -->
+
+    </body>
+</html>
