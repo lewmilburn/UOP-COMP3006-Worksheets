@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="main.js"></script>  <!-- JS functions to be tested go in this file. -->
+        <style>
+            #calculator { width: 150px; background-color: #dfdFDF; padding: 5px; }
+            #calculator input { width: 50px; float: left; margin: 5px; }
+            #result { background-color: #fff; font-size: 20px; color: black; }
+        </style>
+
+        <script>            
+            $(window).on("load", function() {
+                mocha.run();
+            });
+        </script>
+    </head>
+
+    <body>
+        <!-- Do not edit this section. -->
+        <div id="mocha"></div>
+    
+        <script src="https://unpkg.com/chai/chai.js"></script>
+        <script src="https://unpkg.com/mocha/mocha.js"></script>
+    
+        <script class="mocha-init">
+            mocha.setup('tdd');
+        </script>
+        
+        <script src="tests.js"></script>  <!-- JS test code goes in this file. -->
+        
+        <script class="mocha-exec">
+        </script>
+        
+        <!-- Your HTML code goes here. -->
+        <div id="calculator">
+            <p id="result">0.00</p>
+            <input id="number1" /><input id="number2" />
+            <button id="btnAdd">Add</button>
+            <button id="btnMuk">Mul</button>
+        </div>
+    </body>
+</html>

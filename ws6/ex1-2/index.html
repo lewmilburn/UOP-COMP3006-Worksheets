@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="main.js"></script>  <!-- JS functions to be tested go in this file. -->
+    <style>
+        /* Your CSS code goes here. */
+    </style>
+
+    <script>
+        $(window).on("load", function() {
+            mocha.run();
+        });
+    </script>
+</head>
+
+<body>
+<!-- Do not edit this section. -->
+<div id="mocha"></div>
+
+<script src="https://unpkg.com/chai/chai.js"></script>
+<script src="https://unpkg.com/mocha/mocha.js"></script>
+
+<script class="mocha-init">
+    mocha.setup('tdd');
+</script>
+
+<script src="tests.js"></script>  <!-- JS test code goes in this file. -->
+
+<script class="mocha-exec">
+</script>
+
+<!-- Your HTML code goes here. -->
+<p id="sayHello"></p>
+<input id="name">
+<button id="doName">Say hello</button>
+</body>
+</html>
