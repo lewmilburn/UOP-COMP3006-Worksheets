@@ -25,4 +25,13 @@
 # Workshop 5
 | Exercise | Files   | Description       |
 |----------|---------|-------------------|
-| 1-       | `ws5/*` | Angular train app |
+| All      | `ws5/*` | Angular train app |
+# Workshop 6
+| Exercise | Files       | Description   |
+|----------|-------------|---------------|
+| 1-2      | `ws6/ex1-2` | Mocha testing |
+| 3        | `ws6/ex3`   | Mocha testing |
+# Workshop 7
+| Exercise | Files | Description             |
+|----------|-------|-------------------------|
+| All      | `ws7` | Server-side persistance |
