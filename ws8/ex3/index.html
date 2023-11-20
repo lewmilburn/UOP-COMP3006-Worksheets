@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>seat Booking System</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <style>
+            #room {
+                background-color: #CFCFCF;
+                border: black 1px solid;
+                margin: auto;
+                overflow: hidden;
+                width: 360px;
+            }
+            .seat {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                float: left;
+                background-color: #00CC00;
+            }
+            .booked {
+                background-color: #CC0000
+            }
+        </style>
+    </head>
+    <body>
+        <div id="room">
+            <div id="seat-1" class="seat"></div>
+            <div id="seat-2" class="seat"></div>
+            <div id="seat-3" class="seat"></div>
+            <div id="seat-4" class="seat"></div>
+            <div id="seat-5" class="seat"></div>
+            <div id="seat-6" class="seat"></div>
+            <div id="seat-7" class="seat"></div>
+            <div id="seat-8" class="seat"></div>
+            <div id="seat-9" class="seat"></div>
+        </div>
+        <script>
+            $(".seat").on('click', function(event){
+                let id = event.currentTarget.id;
+                $('#'+id).toggleClass('booked');
+                if (localStorage.getItem(id) === null) {
+                    localStorage.setItem(id, 'true');
+                    console.log('[APP] Booking ' +id);
+                } else {
+                    localStorage.removeItem(id);
+                    console.log('[APP] Freeing ' +id);
+                }
+            });
+
+            for (let i = 0; i < 9; i++) {
+                let id = i + 1;
+                if (localStorage.getItem('seat-'+id) !== null) {
+                    $('#seat-'+id).toggleClass('booked');
+                    console.log('[LOAD] seat-' + id + ' booked');
+                } else {
+                    console.log('[LOAD] seat-' + id + ' not booked');
+                }
+            }
+        </script>
+    </body>
+</html>

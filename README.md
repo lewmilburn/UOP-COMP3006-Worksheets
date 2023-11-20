@@ -32,6 +32,13 @@
 | 1-2      | `ws6/ex1-2` | Mocha testing |
 | 3        | `ws6/ex3`   | Mocha testing |
 # Workshop 7
-| Exercise | Files | Description             |
-|----------|-------|-------------------------|
-| All      | `ws7` | Server-side persistance |
+| Exercise | Files   | Description             |
+|----------|---------|-------------------------|
+| All      | `ws7/*` | Server-side persistance |
+# Workshop 8
+| Exercise | Files     | Description                          |
+|----------|-----------|--------------------------------------|
+| 1        | `ws8/ex1` | Local storage                        |
+| 2        | `ws8/ex2` | Web workers (doesn't work on Safari) |
+| 3        | `ws8/ex3` | Local storage (seat booking system)  |
+| 4        | `ws8/ex4` | Sorting (TODO)                       |
