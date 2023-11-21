@@ -18,6 +18,10 @@
                 });
                 socket.emit("request", "Hello from the client");
             });
+
+            function appendMessage(msg) {
+                $("#messages").append('<li>'+msg+'</li>');
+            }
         </script>
     </body>
 </html>

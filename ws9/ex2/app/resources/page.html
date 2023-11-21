@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Message Board</title>
+        <style>
+            #board { width: 300px; height: 500px; border: black 1px solid; }
+            .message { width: 180px; margin: 5px; background-color: #F5FFAD; }
+            .sent { margin-left: 115px; background-color: #BEFF99; }
+        </style>
+    </head>
+    <body>
+        <label for="msg">Message</label>
+        <input id="msg">
+        <button id="send">Send</button>
+        <div id="messages"></div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+        <script>
+            $(function () {
+                let socket = io("http://localhost:9000");
+                socket.on("confirm connection", function (msg) {
+                    appendMessage(msg, 'message');
+                });
+                socket.on("response", function (msg) {
+                    appendMessage(msg, 'message');
+                });
+                socket.on("send message", function (msg) {
+                    appendMessage(msg, 'message');
+                });
+                socket.emit("request", "Hello from the client");
+
+                function appendMessage(msg, cls) {
+                    $("#messages").append('<li class="'+cls+'">'+msg+'</li>');
+                }
+
+                $("#send").on( "click", function() {
+                    let input = $("#msg");
+                    socket.emit("send message", input.val());
+                    appendMessage(input.val(), 'message sent');
+                    input.val("");
+                });
+            });
+        </script>
+    </body>
+</html>
